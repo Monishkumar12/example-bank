@@ -63,7 +63,7 @@ spec:
         - s2i
         - build
         - $(inputs.params.PATH_CONTEXT)
-        - registry.access.redhat.com/redhat-openjdk:latest/openjdk:latest-openshift
+        - registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift
         - '--image-scripts-url'
         - 'image:///usr/local/s2i'
         - '--as-dockerfile'
@@ -89,7 +89,7 @@ spec:
         - '-t'
         - $(outputs.resources.image.url)
         - .
-      image: 'quay.io/buildah/stable:v1.11.4'
+      image: 'quay.io/buildah/stable:latest'
       name: build
       resources: {}
       securityContext:
@@ -106,7 +106,7 @@ spec:
         - '--tls-verify=$(inputs.params.TLSVERIFY)'
         - $(outputs.resources.image.url)
         - 'docker://$(outputs.resources.image.url)'
-      image: 'quay.io/buildah/stable:v1.11.4'
+      image: 'quay.io/buildah/stable:latest'
       name: push
       resources: {}
       securityContext:
