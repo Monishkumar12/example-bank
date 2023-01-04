@@ -1,4 +1,4 @@
-FROM docker.io/library/node:12.16.1-alpine
+FROM docker.io/library/node:12
 
 ENV NODE_ENV production
 ENV PORT 8080
